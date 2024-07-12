@@ -1,10 +1,27 @@
-# imports 
 from typing import List
 
+"""
+className : Parameter 
+
+description : It represents a parameter which is eventually used to calculate
+GreenScore 
+
+attributes :
+<string> name - name of the parameter 
+<int> id - unique id of the parameter 
+<float> weight - weight given to the parameter, 0 <= weight < 1 
+<int> score - how much does the user score in the given parameter
+
+methods :
+<int> get_score() - returns the score of the user 
+<void> set_score() - updates the score of the user 
+<float> get_weight() - returns the weight of the parameter
+<void> set_weight() - updates the weight of the parameter
+"""
 class Parameter:
     def __init__(self, name : str, id : int) -> None:
         self.name : str = name
-        self.id = id 
+        self.id : int = id 
         self.weight : float = 0.0
         self.score : int = 0 
         return None
@@ -23,6 +40,63 @@ class Parameter:
 
     def set_weight(self, weight : float) -> None:
         self.weight = weight
+
+# ----------------- VEHICLES --------------------------
+class Vehicle:
+    def __init__(self, id : int, name : str, regNo : str, owner : str):
+        self.id : int = id
+        self.name : str = name 
+        self.regNo : str = regNo # to make a regEx with it instead of a string  
+        self.owner : str = owner 
+
+    def __str__(self):
+        return f"<vehicle object {self.regNo} {self.name} at id={self.id}>"
+
+class Petrol(Vehicle):
+    def __init__(self, id : int, name : str, regNo : str, owner : str, model : str):
+        super().__init__(id,name,regNo,owner)
+        self._model : str = model
+        self._mileage : float = 0.0 
+        self._odo : float = 0.0 
+
+    @property
+    def mileage(self):
+        return self._mileage
+    
+    @property
+    def odo(self):
+        return self._odo
+
+    @mileage.setter 
+    def mileage(self, new_mileage : float):
+        self._mileage = new_mileage 
+
+    @odo.setter 
+    def odo(self, new_odo : float):
+        self._odo = new_odo
+
+    def calculate_score(self):
+        pass 
+
+
+class EV(Vehicle):
+    def __init__(self, id : int, name : str, regNo : str, owner : str, model : str):
+        super().__init__(id,name,regNo,owner)
+        self._model : str = model
+        self._mileage : float = 0.0
+        self._units : float = 0.0 
+        self._odo : float = 0.0 
+    
+    @property 
+    def units(self):
+        return self._units 
+
+    @units.setter
+    def units(self, new_units : float):
+        self._units = new_units
+
+    def calculate_score(self):
+        pass 
 
 # sub-parameters
 class investingInSustainableEnergy(Parameter):
@@ -128,8 +202,16 @@ class energyEfficiency(Parameter):
         
 # greenScore class starts here 
 class greenScore:
-    def __init__(self, userID : int) -> None:
+    def __init__(self, userID : int, name : str, username : str) -> None:
         self.userID = userID
+
+        # user metrics we will calculate 
+        self.name : str = name
+        self.username : str = username 
+         
+        self.spending : float = 0.0
+        self.units : float = 0.0
+
         
         # initialising the parameters
         self.s = sustainableInvestment()
