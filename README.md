@@ -1,11 +1,28 @@
 <p align="center">
-  <img src="photos/grovelogo.png" height="200" width="200">
+  <img src="assets/images/logo.png" height="200" width="200">
 </p>
 <p align="center">
   A project part of IIT Jodhpur's Green FinTech hackathon (powered by TISC)
 </p>
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=debian,neovim,py" />
+    <img src="https://skillicons.dev/icons?i=flutter,debian,neovim,py" />
   </a>
 </p>
+
+# flutter_application_1
+
+A new Flutter project.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
