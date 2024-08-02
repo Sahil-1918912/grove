@@ -2,7 +2,7 @@
   <img src="assets/images/logo.png" height="200">
 </p>
 <p align="center">
-  A project part of IIT Jodhpur's Green FinTech hackathon (powered by TISC)
+  A project part of IIT Jodhpur X RBI's Green FinTech hackathon (powered by TISC)
 </p>
 <p align="center">
   <a href="https://skillicons.dev">
